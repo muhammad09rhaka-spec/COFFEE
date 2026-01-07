@@ -1,0 +1,497 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background: linear-gradient(135deg, rgba(1, 1, 1, 0.9) 0%, rgba(21, 21, 21, 0.9) 100%); /* Gradien halus untuk kedalaman */
+  border-bottom: 1px solid #513c51;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  backdrop-filter: blur(10px); /* Efek blur modern */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Bayangan untuk efek floating */
+  transition: box-shadow 0.3s ease; /* Transisi smooth */
+}
+
+.navbar:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Bayangan lebih kuat saat hover */
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+  transition: transform 0.4s ease, text-shadow 0.4s ease; /* Transisi smooth */
+}
+
+.navbar .navbar-logo:hover {
+  transform: scale(1.05) rotate(1deg); /* Efek hover dinamis */
+  text-shadow: 0 0 10px rgba(182, 137, 91, 0.5); /* Glow dengan warna primary */
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 1rem;
+  position: relative;
+  transition: color 0.4s ease, transform 0.4s ease; /* Transisi lebih smooth */
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+  transform: translateY(-3px) scale(1.05); /* Efek hover lebih menonjol */
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: transform 0.4s ease; /* Transisi diperpanjang */
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+  transition: color 0.4s ease, transform 0.4s ease; /* Transisi smooth */
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+  transform: scale(1.1); /* Efek scale ringan */
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+
+/* About */
+.about {
+  padding: 12rem 7%;
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(21, 21, 21, 0.5) 100%); /* Subtle gradien */
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.about h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--primary); /* Garis bawah dengan primary */
+  border-radius: 2px;
+}
+
+.about h2 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+  position: relative;
+}
+
+.about .row .about-img img {
+  width: 100%;
+  border-radius: 1rem; /* Border-radius untuk tampilan modern */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Bayangan untuk kedalaman */
+  transition: transform 0.4s ease; /* Transisi smooth */
+}
+
+.about .row .about-img img:hover {
+  transform: scale(1.05); /* Efek zoom ringan */
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary); /* Menggunakan primary untuk heading */
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+/* Menu */
+.menu {
+  padding: 6rem 7%;
+  background-color: var(--bg);
+}
+
+.menu h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.menu h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.menu h2 span {
+  color: var(--primary);
+}
+
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.menu .row .menu-card {
+  flex: 1 1 25rem;
+  text-align: center;
+  padding-bottom: 4rem;
+  background: linear-gradient(145deg, rgba(34, 34, 34, 0.8) 0%, rgba(21, 21, 21, 0.8) 100%); /* Gradien pada card */
+  border-radius: 1rem; /* Border-radius */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Bayangan */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transisi smooth */
+  overflow: hidden;
+}
+
+.menu .row .menu-card:hover {
+  transform: translateY(-10px); /* Efek lift */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.menu .row .menu-card .menu-card-img {
+  border-radius: 50%;
+  width: 80%;
+  aspect-ratio: 1;
+  margin: 2rem auto 0;
+  transition: transform 0.4s ease; /* Transisi smooth */
+}
+
+.menu .row .menu-card:hover .menu-card-img {
+  transform: rotate(5deg) scale(1.1); /* Efek rotate dan scale */
+}
+
+.menu .row .menu-card .menu-card-title {
+  margin-top: 6rem auto 0.5rem;
+  font-size: 1.6rem;
+}
+
+.menu .row .menu-card .menu-card-price {
+  color: var(--primary);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.menu .row .menu-card .order-btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary) 0%, #a0764a 100%);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu .row .menu-card .order-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.menu .row .menu-card .order-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.menu .row .menu-card .order-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(182, 137, 91, 0.4);
+}
+
+/* Contact */
+.contact {
+  padding: 6rem 7%;
+  background-color: var(--bg);
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.contact h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.contact h2 span {
+  color: var(--primary);
+}
+
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222;
+  border-radius: 1rem; /* Border-radius untuk tampilan modern */
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Bayangan */
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+  border-radius: 0.5rem; /* Border-radius */
+  transition: border-color 0.4s ease, box-shadow 0.4s ease; /* Transisi smooth */
+}
+
+.contact .row form .input-group:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(182, 137, 91, 0.3); /* Glow dengan primary */
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .input-group i {
+  color: var(--primary);
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary) 0%, #a0764a 100%);
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact .row form .btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.contact .row form .btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.contact .row form .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(182, 137, 91, 0.4);
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%); /* Gradien pada slide-out */
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* About */
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+    text-align: center;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+
+  /* Menu */
+  .menu .row .menu-card {
+    flex: 1 1 50%;
+  }
+
+  /* Contact */
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+}
+
+/*

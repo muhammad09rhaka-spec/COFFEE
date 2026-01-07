@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan | kenangansenja</title>
+    <link rel="stylesheet" href="CSS/pesan.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">kenangan<span>senja</span></div>
+        <nav>
+
+            <a href="Home.html">Home</a>
+            <a href="Menu.html">Menu</a>
+            <a href="tentang kami.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="Pesan.html">Order</a>
+ 
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <section class="container">
+        <h1>Form Pemesanan</h1>
+        <p>Silakan isi form berikut untuk melakukan pemesanan.</p>
+
+        <form class="form-box" onsubmit="sendWA(event)">
+            
+    <label>Nama Lengkap</label>
+    <input id="nama" type="text" placeholder="Masukkan nama kamu" required>
+
+    <label>Nomor WhatsApp</label>
+    <input id="wa" type="tel" placeholder="08123456789" required>
+
+    <label>Pilihan Menu</label>
+    <select id="menu" required>
+        <option value="">-- Pilih Menu --</option>
+        <option>Americano</option>
+        <option>Cappuccino</option>
+        <option>Latte</option>
+        <option>Mocha</option>
+        <option>Es Kopi Susu</option>
+    </select>
+
+    <label>Jumlah</label>
+    <input id="jumlah" type="number" min="1" value="1" required>
+
+    <label>Catatan Tambahan</label>
+    <textarea id="catatan" placeholder="Contoh: kurang manis, banyak es, dll"></textarea>
+
+    <button type="submit">Pesan Sekarang</button>
+
+</form>
+
+<script>
+function sendWA(event) {
+    event.preventDefault();
+
+    let nama = document.getElementById("nama").value;
+    let wa = document.getElementById("wa").value;
+    let menu = document.getElementById("menu").value;
+    let jumlah = document.getElementById("jumlah").value;
+    let catatan = document.getElementById("catatan").value;
+
+    let pesan = `Halo, saya mau pesan:%0A
+Nama: ${nama}%0A
+Nomor WA: ${wa}%0A
+Menu: ${menu}%0A
+Jumlah: ${jumlah}%0A
+Catatan: ${catatan}`;
+
+    //Nomer
+    window.open('https://wa.me/6285791757209?text=${pesan}');
+
+
+setTimeout(() => {
+    window.location.href = 
+    "terimakasih.html";
+}, 1000);
+}
+</script>
+
+</body>
+</html>

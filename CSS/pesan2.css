@@ -1,0 +1,262 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font lebih modern */
+}
+
+/* Header */
+header {
+    width: 100%;
+    padding: 1.5rem 3rem; /* Padding diperbesar untuk ruang lebih */
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%); /* Gradien halus untuk kedalaman tanpa mengubah warna dasar */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Bayangan lebih kuat untuk efek floating */
+    backdrop-filter: blur(10px); /* Efek blur untuk transparansi modern */
+}
+
+header .logo {
+    font-size: 2rem; /* Diperbesar untuk lebih menonjol */
+    font-weight: 800; /* Lebih bold */
+    letter-spacing: 1px; /* Spacing huruf untuk gaya */
+    transition: transform 0.4s ease, text-shadow 0.4s ease; /* Transisi lebih smooth */
+}
+
+header .logo:hover {
+    transform: scale(1.1) rotate(1deg); /* Efek hover lebih dinamis */
+    text-shadow: 0 0 10px rgba(212, 160, 86, 0.5); /* Glow ringan dengan warna yang ada */
+}
+
+header .logo span {
+    color: #d4a056;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 2.5rem; /* Margin diperbesar */
+    text-decoration: none;
+    color: #ccc;
+    font-size: 1.1rem; /* Diperbesar */
+    font-weight: 500;
+    position: relative;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transisi lebih lama */
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d4a056; /* Garis bawah dengan warna yang ada */
+    transition: width 0.4s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover,
+nav a.active {
+    color: #d4a056;
+    transform: translateY(-3px) scale(1.05); /* Efek hover lebih menonjol */
+}
+
+/* Container */
+.container {
+    padding-top: 9rem; /* Disesuaikan dengan header yang lebih tinggi */
+    width: 90%;
+    max-width: 700px; /* Diperbesar untuk lebih luas */
+    margin: auto;
+    text-align: center;
+    padding-bottom: 3rem; /* Padding bawah diperbesar */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 100%); /* Subtle overlay untuk kedalaman */
+    border-radius: 20px; /* Border-radius untuk tampilan lebih organik */
+    margin-top: 2rem; /* Margin atas untuk spacing */
+}
+
+.container h1 {
+    font-size: 3rem; /* Diperbesar signifikan */
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px; /* Spacing untuk gaya */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan teks ringan */
+}
+
+.container p {
+    margin-bottom: 2.5rem;
+    color: #444;
+    line-height: 1.8; /* Line-height diperbesar untuk readability */
+    font-size: 1.1rem; /* Diperbesar */
+}
+
+/* Form */
+.form-box {
+    background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%); /* Gradien halus untuk efek 3D */
+    padding: 3rem; /* Padding diperbesar */
+    border-radius: 1.5rem; /* Border-radius diperbesar */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6); /* Bayangan ganda untuk efek raised */
+    text-align: left;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transisi smooth */
+    position: relative;
+    overflow: hidden; /* Untuk efek animasi */
+}
+
+.form-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 160, 86, 0.1), transparent); /* Shine effect dengan warna yang ada */
+    transition: left 0.6s ease;
+}
+
+.form-box:hover::before {
+    left: 100%;
+}
+
+.form-box:hover {
+    transform: translateY(-5px); /* Efek lift saat hover */
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.25); /* Bayangan lebih kuat */
+}
+
+label {
+    display: block;
+    margin: 1.5rem 0 0.7rem; /* Margin diperbesar */
+    font-weight: bold;
+    font-size: 1.2rem; /* Diperbesar */
+    color: #333; /* Sedikit lebih gelap untuk kontras */
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 1.2rem; /* Padding diperbesar */
+    border-radius: 0.8rem; /* Border-radius diperbesar */
+    border: 2px solid #bbb; /* Border lebih tebal */
+    margin-bottom: 1rem; /* Margin bawah diperbesar */
+    font-size: 1.1rem; /* Diperbesar */
+    background: #fafafa; /* Background sedikit berbeda untuk kedalaman */
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease; /* Transisi lebih smooth */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #d4a056; /* Menggunakan warna yang ada untuk fokus */
+    outline: none;
+    box-shadow: 0 0 10px rgba(212, 160, 86, 0.3); /* Glow dengan warna yang ada */
+    transform: scale(1.02); /* Efek scale ringan */
+}
+
+textarea {
+    height: 150px; /* Diperbesar */
+    resize: none;
+}
+
+button {
+    width: 100%;
+    padding: 1.5rem; /* Padding diperbesar */
+    background: linear-gradient(135deg, #d4a056 0%, #b98a44 100%); /* Gradien pada button */
+    color: white;
+    font-size: 1.3rem; /* Diperbesar */
+    border: none;
+    border-radius: 1rem; /* Border-radius diperbesar */
+    cursor: pointer;
+    margin-top: 2rem; /* Margin atas diperbesar */
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transisi smooth */
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3); /* Ripple effect */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.02); /* Efek hover lebih dinamis */
+    box-shadow: 0 8px 25px rgba(212, 160, 86, 0.4); /* Bayangan dengan warna yang ada */
+}
+
+/* Responsivitas untuk layar kecil */
+@media (max-width: 768px) {
+    header {
+        padding: 1.2rem 1.5rem; /* Padding dikurangi */
+        flex-direction: column; /* Stack vertikal untuk mobile */
+        gap: 1rem;
+    }
+    
+    header .logo {
+        font-size: 1.8rem; /* Ukuran dikurangi */
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav a {
+        margin-left: 1.5rem; /* Margin dikurangi */
+        font-size: 1rem; /* Ukuran dikurangi */
+    }
+    
+    .container {
+        padding-top: 8rem; /* Disesuaikan */
+        width: 95%; /* Lebar diperbesar */
+        margin-top: 1rem;
+    }
+    
+    .container h1 {
+        font-size: 2.5rem; /* Ukuran dikurangi */
+        letter-spacing: 1px;
+    }
+    
+    .form-box {
+        padding: 2.5rem; /* Padding dikurangi */
+    }
+    
+    input,
+    select,
+    textarea {
+        padding: 1rem; /* Padding dikurangi */
+        font-size: 1rem;
+    }
+    
+    button {
+        padding: 1.2rem; /* Padding dikurangi */
+        font-size: 1.2rem;
+    }
+}
+

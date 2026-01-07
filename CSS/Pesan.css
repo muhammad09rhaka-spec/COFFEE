@@ -1,0 +1,182 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+header {
+    width: 100%;
+    padding: 1.2rem 3rem;
+    background: #0d0d0d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Tambahan bayangan untuk kedalaman */
+}
+
+header .logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    transition: transform 0.3s ease; /* Transisi smooth untuk hover */
+}
+
+header .logo:hover {
+    transform: scale(1.05); /* Efek hover ringan pada logo */
+}
+
+header .logo span {
+    color: #d4a056;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transisi smooth */
+}
+
+nav a:hover,
+nav a.active {
+    color: #d4a056;
+    transform: translateY(-2px); /* Efek hover ringan */
+}
+
+/* Container */
+.container {
+    padding-top: 8rem; /* Biar tidak tertutup navbar */
+    width: 90%;
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 2rem; /* Tambahan padding bawah untuk ruang */
+}
+
+.container h1 {
+    font-size: 2.5rem; /* Sedikit diperbesar untuk lebih menonjol */
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.container p {
+    margin-bottom: 2rem;
+    color: #444;
+    line-height: 1.6; /* Tambahan line-height untuk readability */
+}
+
+/* Form */
+.form-box {
+    background: white;
+    padding: 2.5rem; /* Sedikit diperbesar untuk ruang lebih */
+    border-radius: 1.2rem; /* Border-radius diperbesar untuk tampilan lebih modern */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15); /* Bayangan diperkuat untuk kedalaman */
+    text-align: left;
+    transition: box-shadow 0.3s ease; /* Transisi smooth untuk interaksi */
+}
+
+.form-box:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2); /* Efek hover pada form */
+}
+
+label {
+    display: block;
+    margin: 1.2rem 0 0.5rem; /* Margin atas diperbesar untuk spacing */
+    font-weight: bold;
+    font-size: 1.1rem; /* Sedikit diperbesar */
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 1rem; /* Padding diperbesar untuk kenyamanan */
+    border-radius: 0.6rem; /* Border-radius diperbesar */
+    border: 1px solid #bbb;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transisi smooth */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #bbb; /* Tetap gunakan warna yang ada, tapi tambah outline untuk fokus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Bayangan ringan saat fokus */
+}
+
+textarea {
+    height: 120px; /* Sedikit diperbesar */
+    resize: none;
+}
+
+button {
+    width: 100%;
+    padding: 1.2rem; /* Padding diperbesar */
+    background: #d4a056;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 0.8rem; /* Border-radius diperbesar */
+    cursor: pointer;
+    margin-top: 1.5rem; /* Margin atas diperbesar */
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transisi smooth */
+}
+
+button:hover {
+    background: #b98a44;
+    transform: translateY(-2px); /* Efek hover ringan */
+}
+
+/* Responsivitas untuk layar kecil */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem; /* Padding dikurangi untuk mobile */
+    }
+    
+    header .logo {
+        font-size: 1.5rem; /* Ukuran logo dikurangi */
+    }
+    
+    nav a {
+        margin-left: 1rem; /* Margin dikurangi */
+        font-size: 0.9rem; /* Ukuran font dikurangi */
+    }
+    
+    .container {
+        padding-top: 7rem; /* Padding atas dikurangi */
+        width: 95%; /* Lebar diperbesar untuk mobile */
+    }
+    
+    .container h1 {
+        font-size: 2rem; /* Ukuran h1 dikurangi */
+    }
+    
+    .form-box {
+        padding: 2rem; /* Padding dikurangi */
+    }
+    
+    input,
+    select,
+    textarea {
+        padding: 0.9rem; /* Padding dikurangi */
+    }
+    
+    button {
+        padding: 1rem; /* Padding dikurangi */
+    }
+}
