@@ -1,0 +1,3 @@
+- [ ] Update head section in index2.html: add Google Fonts, Feather Icons script, change CSS to ./CSS/style.css, update title
+- [ ] Update navbar links in index2.html to match index.html
+- [ ] Add Feather Icons init and JS script at end of body in index2.html

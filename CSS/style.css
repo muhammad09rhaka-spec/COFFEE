@@ -257,6 +257,20 @@ body {
   color: var(--primary);
 }
 
+.menu h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 3rem 0 1rem;
+  color: var(--primary);
+}
+
+.menu hr {
+  border: none;
+  height: 1px;
+  background-color: #513c51;
+  margin: 3rem 0;
+}
+
 .menu .row {
   display: flex;
   flex-wrap: wrap;
@@ -285,24 +299,6 @@ body {
   color: var(--primary);
   font-size: 1.6rem;
   font-weight: 400;
-}
-
-.menu .row .menu-card .order-btn {
-  margin-top: 1rem;
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  font-size: 1.4rem;
-  color: #fff;
-  background-color: var(--primary);
-  border-radius: 0.5rem;
-  box-shadow: 1px 1px 3px rgba(1,1,3,0.5);
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.menu .row .menu-card .order-btn:hover {
-  background-color: #a0764a;
-  transform: scale(1.05);
 }
 
 /* Contact */

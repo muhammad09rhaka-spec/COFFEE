@@ -1,87 +1,117 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pemesanan | kenangansenja</title>
-    <link rel="stylesheet" href="/CSS/style1.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order | Kenangan Senja Coffee</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./CSS/style.css" />
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">kenangan<span>senja</span></div>
-        <nav>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">
+      kenangan<span>senja</span>
+    </a>
 
-            <a href="Home.html">Home</a>
-            <a href="Menu.html">Menu</a>
-            <a href="tentang kami.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="Pesan.html">Order</a>
- 
-        </nav>
-    </header>
+    <div class="navbar-nav">
+      <a href="index.html">Home</a>
+      <a href="index4.html">About</a>
+      <a href="index2.html">Menu</a>
+      <a href="index1.html">Contact</a>
+      <a href="index3.html">Order</a>
+    </div>
 
-    <!-- MAIN -->
-    <section class="container">
-        <h1>Form Pemesanan</h1>
-        <p>Silakan isi form berikut untuk melakukan pemesanan.</p>
+    <div class="navbar-extra">
+      <a href="#" id="search"><i data-feather="search"></i></a>
+      <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+  <!-- Navbar end -->
 
-        <form class="form-box" onsubmit="sendWA(event)">
-            
-    <label>Nama Lengkap</label>
-    <input id="nama" type="text" placeholder="Masukkan nama kamu" required>
+  <!-- Order Form Section -->
+  <section class="container">
+    <h1>Form Pemesanan</h1>
+    <p>Silakan isi form berikut untuk melakukan pemesanan.</p>
 
-    <label>Nomor WhatsApp</label>
-    <input id="wa" type="tel" placeholder="08123456789" required>
+    <form class="form-box" onsubmit="sendWA(event)">
 
-    <label>Pilihan Menu</label>
-    <select id="menu" required>
+      <label>Nama Lengkap</label>
+      <input id="nama" type="text" placeholder="Masukkan nama kamu" required>
+
+      <label>Nomor WhatsApp</label>
+      <input id="wa" type="tel" placeholder="08123456789" required>
+
+      <label>Pilihan Menu</label>
+      <select id="menu" required>
         <option value="">-- Pilih Menu --</option>
         <option>Americano</option>
         <option>Cappuccino</option>
         <option>Latte</option>
         <option>Mocha</option>
         <option>Es Kopi Susu</option>
-    </select>
+      </select>
 
-    <label>Jumlah</label>
-    <input id="jumlah" type="number" min="1" value="1" required>
+      <label>Jumlah</label>
+      <input id="jumlah" type="number" min="1" value="1" required>
 
-    <label>Catatan Tambahan</label>
-    <textarea id="catatan" placeholder="Contoh: kurang manis, banyak es, dll"></textarea>
+      <label>Catatan Tambahan</label>
+      <textarea id="catatan" placeholder="Contoh: kurang manis, banyak es, dll"></textarea>
 
-    <button type="submit">Pesan Sekarang</button>
+      <button type="submit">Pesan Sekarang</button>
 
-</form>
+    </form>
 
-<script>
-function sendWA(event) {
-    event.preventDefault();
+    <script>
+      function sendWA(event) {
+        event.preventDefault();
 
-    let nama = document.getElementById("nama").value;
-    let wa = document.getElementById("wa").value;
-    let menu = document.getElementById("menu").value;
-    let jumlah = document.getElementById("jumlah").value;
-    let catatan = document.getElementById("catatan").value;
+        let nama = document.getElementById("nama").value;
+        let wa = document.getElementById("wa").value;
+        let menu = document.getElementById("menu").value;
+        let jumlah = document.getElementById("jumlah").value;
+        let catatan = document.getElementById("catatan").value;
 
-    let pesan = `Halo, saya mau pesan:%0A
-Nama: ${nama}%0A
-Nomor WA: ${wa}%0A
-Menu: ${menu}%0A
-Jumlah: ${jumlah}%0A
-Catatan: ${catatan}`;
+        let pesan = `Halo, saya mau pesan:%0A
+  Nama: ${nama}%0A
+  Nomor WA: ${wa}%0A
+  Menu: ${menu}%0A
+  Jumlah: ${jumlah}%0A
+  Catatan: ${catatan}`;
 
-    //Nomer
-    window.open('https://wa.me/6285791757209?text=${pesan}');
+        //Nomer
+        window.open('https://wa.me/6285791757209?text=${pesan}');
 
+        setTimeout(() => {
+          window.location.href =
+          "terimakasih.html";
+        }, 1000);
+      }
+    </script>
 
-setTimeout(() => {
-    window.location.href = 
-    "terimakasih.html";
-}, 1000);
-}
-</script>
+  </section>
 
+  <!-- Feather Icons Init -->
+  <script>
+    feather.replace();
+  </script>
+
+  <!-- Javascript -->
+  <script src="./JS/script.js"></script>
 </body>
 </html>
